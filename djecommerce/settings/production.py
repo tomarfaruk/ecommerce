@@ -1,5 +1,5 @@
 from .base import *
-
+import django_heroku
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
@@ -13,14 +13,16 @@ AUTH_PASSWORD_VALIDATORS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': ''
+        'NAME': "d3ivduek0cvv3s",
+        'USER': "eertwpddbufqos",
+        'PASSWORD': "d2ece9002294357e2548b8cf1f266198e70f54835815a885c6f7754a59935a81",
+        'HOST': "ec2-23-21-87-183.compute-1.amazonaws.com",
+        'PORT': '5432'
     }
 }
 
 
 STRIPE_PUBLIC_KEY = config('STRIPE_LIVE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_LIVE_SECRET_KEY')
+
+django_heroku.settings(locals())
